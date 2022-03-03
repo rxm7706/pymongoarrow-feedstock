@@ -42,7 +42,7 @@ requirements:
     - cython >=0.29
     - libbson >=1,<2
     - pip
-    - pyarrow <6.1,>=6
+    - pyarrow <7.1,>=7
     - pkg-config
     - python
 
