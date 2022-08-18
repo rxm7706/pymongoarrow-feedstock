@@ -1,5 +1,5 @@
 {% set name = "pymongoarrow" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-{{ version }}.tar.gz
-  sha256: 328aa5f295820bb5c3dc2d3db2f7a731a5719e56180c32b33a72ec2be5514aa0
+  sha256: 3952a8378e5bc7cf4e1dc1fdff180d4e2da2fd758218d902eabf436f714ae3f7
 
 build:
-  number: 2
+  number: 0
   script:
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
     - export MONGO_LIBARROW_DIR="${PREFIX}/lib"   # [unix]
