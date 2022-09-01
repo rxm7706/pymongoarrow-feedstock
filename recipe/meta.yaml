@@ -1,5 +1,5 @@
 {% set name = "pymongoarrow" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-{{ version }}.tar.gz
-  sha256: 3952a8378e5bc7cf4e1dc1fdff180d4e2da2fd758218d902eabf436f714ae3f7
+  sha256: af9769212eff79cb061673205b9989dcdc7308baa17a5682331a193b76ed0825
 
 build:
   number: 0
