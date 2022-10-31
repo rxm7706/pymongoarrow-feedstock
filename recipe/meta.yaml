@@ -11,7 +11,7 @@ source:
   sha256: af9769212eff79cb061673205b9989dcdc7308baa17a5682331a193b76ed0825
 
 build:
-  number: 1
+  number: 2
   script:
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
     - export MONGO_LIBARROW_DIR="${PREFIX}/lib"   # [unix]
