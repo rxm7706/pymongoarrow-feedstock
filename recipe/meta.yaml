@@ -63,7 +63,6 @@ test:
     - pandas
     - numpy
     - pyarrow
-    - pytest
     - mongodb     # [not win]
   commands:
     - bash run_the_tests.sh  # [unix and not (ppc64le or python_impl=='pypy')]

@@ -11,7 +11,7 @@ mongod --dbpath="$DB_PATH" --fork --logpath="$LOG_PATH" --port="$DB_PORT" --pidf
 
 # Remove the local copy of the source files
 rm -rf pymongoarrow
-python -m pytest
+python -m unittest discover test -v
 
 # Terminate the forked process after the test suite exits
 kill `cat $PID_FILE_PATH`
