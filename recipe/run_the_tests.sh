@@ -9,6 +9,8 @@ mkdir "$DB_PATH"
 
 mongod --dbpath="$DB_PATH" --fork --logpath="$LOG_PATH" --port="$DB_PORT" --pidfilepath="$PID_FILE_PATH"
 
+# Remove the local copy of the source files
+rm -rf pymongoarrow
 python setup.py test
 
 # Terminate the forked process after the test suite exits
