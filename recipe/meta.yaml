@@ -66,7 +66,6 @@ test:
     - mongodb     # [not win]
   commands:
     - bash run_the_tests.sh  # [unix and not (ppc64le or python_impl=='pypy')]
-    - pip check
 
 about:
   home: https://pypi.org/project/pymongoarrow/
