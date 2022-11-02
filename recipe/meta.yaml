@@ -12,6 +12,7 @@ source:
 
 build:
   number: 2
+  skip: true  # [arrow_cpp == "6.0.2"]
   script:
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
     - export MONGO_LIBARROW_DIR="${PREFIX}/lib"   # [unix]
