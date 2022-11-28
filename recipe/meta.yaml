@@ -16,7 +16,7 @@ build:
   script_env:
      MACOSX_DEPLOYMENT_TARGET=10.15
   script:
-    - export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
+    - export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
     - export MONGO_LIBARROW_DIR="${PREFIX}/lib"   # [unix]
     - export MONGO_NO_COPY_LIBBSON=1              # [unix]
