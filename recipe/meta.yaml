@@ -40,7 +40,7 @@ requirements:
     - {{ compiler('cxx') }}
 
   host:
-    - {{ pin_subpackage('arrow-cpp', exact=True) }}
+    - {{ pin_compatible('arrow-cpp', exact=True) }}
     - clangdev {{ llvm_version }}
     - llvmdev {{ llvm_version }}
     - cython >=0.29
@@ -50,7 +50,7 @@ requirements:
     - pkg-config
 
   run:
-    - {{ pin_subpackage('arrow-cpp', exact=True) }}
+    - {{ pin_compatible('arrow-cpp', exact=True) }}
     - pyarrow >=7
     - pymongo >=3.11,<5
     - python
