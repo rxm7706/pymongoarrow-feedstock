@@ -22,7 +22,7 @@ build:
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
     - set "LIBBSON_INSTALL_DIR=%LIBRARY_PREFIX%"  # [win]
-    - {{ PYTHON }} -m pip install . --no-deps -vvv
+    - MACOS_DEPLOYMENT_TARGET="10.15" {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
   build:
