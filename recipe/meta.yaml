@@ -1,6 +1,6 @@
 {% set name = "pymongoarrow" %}
 {% set version = "0.6.2" %}
-{% set llvm_version = "14" %}
+
 
 package:
   name: {{ name|lower }}
@@ -22,36 +22,32 @@ build:
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
     - set "LIBBSON_INSTALL_DIR=%LIBRARY_PREFIX%"  # [win]
-    - MACOS_DEPLOYMENT_TARGET="10.15" {{ PYTHON }} -m pip install . --no-deps -vvv
+    - {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
+    - arrow-cpp                              # [build_platform != target_platform]
     - pyarrow                                # [build_platform != target_platform]
     - libbson                                # [build_platform != target_platform]
     - pkg-config                             # [build_platform != target_platform]
-    - clangdev {{ llvm_version }}            # [osx and arm64]
-    - llvmdev {{ llvm_version }}             # [osx and arm64]
-    - gnuconfig                              # [osx and arm64]
     - setuptools >=47
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
 
   host:
     - python
-    - {{ pin_compatible('arrow-cpp', exact=True) }}
-    - clangdev {{ llvm_version }}
-    - llvmdev {{ llvm_version }}
+    - arrow-cpp
     - cython >=0.29
     - libbson >=1,<2
     - pip
     - pyarrow >=7
     - pkg-config
+    - python
 
   run:
-    - {{ pin_compatible('arrow-cpp', exact=True) }}
     - pyarrow >=7
     - pymongo >=3.11,<5
     - python
