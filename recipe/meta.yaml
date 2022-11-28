@@ -1,6 +1,6 @@
 {% set name = "pymongoarrow" %}
 {% set version = "0.6.2" %}
-
+{% set llvm_version = "14" %}
 
 package:
   name: {{ name|lower }}
