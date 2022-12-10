@@ -23,6 +23,7 @@ build:
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
     - set "LIBBSON_INSTALL_DIR=%LIBRARY_PREFIX%"  # [win]
+    - export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
     - {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
@@ -51,6 +52,7 @@ requirements:
   run:
     - pyarrow >=7
     - pymongo >=3.11,<5
+    - arrow-cpp
     - python
 
 test:
@@ -58,8 +60,6 @@ test:
     - .
   files:
     - run_the_tests.sh
-  imports:
-    - pymongoarrow
   requires:
     - pip
     - pandas
