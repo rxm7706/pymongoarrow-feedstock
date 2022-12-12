@@ -11,14 +11,14 @@ source:
   sha256: 28d0d2b15a72b612c6533bed2a55d847b8b11500035f595ae7036f36d9f10c3c
 
 build:
-  number: 0
-  skip: true  # [arrow_cpp == "6.0.2"]
+  number: 1
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
     - export MONGO_LIBARROW_DIR="${PREFIX}/lib"   # [unix]
     - export MONGO_NO_COPY_LIBBSON=1              # [unix]
     - export LIBBSON_INSTALL_DIR="${PREFIX}"      # [unix]
+    - export MONGO_CREATE_LIBARROW_SYMLINKS=""    # [unix]
     - set MONGO_NO_COPY_LIBARROW=1                # [win]
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
@@ -51,6 +51,7 @@ requirements:
   run:
     - pyarrow >=7
     - pymongo >=3.11,<5
+    - arrow-cpp
     - python
 
 test:
@@ -58,8 +59,6 @@ test:
     - .
   files:
     - run_the_tests.sh
-  imports:
-    - pymongoarrow
   requires:
     - pip
     - pandas
