@@ -1,5 +1,5 @@
 {% set name = "pymongoarrow" %}
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-{{ version }}.tar.gz
-  sha256: 28d0d2b15a72b612c6533bed2a55d847b8b11500035f595ae7036f36d9f10c3c
+  sha256: 42912438b355f7c46d4995bc001c8012d787e7839120cfba5d2b63f6fed98fb1
 
 build:
-  number: 1
+  number: 0
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
@@ -19,6 +19,7 @@ build:
     - export MONGO_NO_COPY_LIBBSON=1              # [unix]
     - export LIBBSON_INSTALL_DIR="${PREFIX}"      # [unix]
     - export MONGO_CREATE_LIBARROW_SYMLINKS=""    # [unix]
+    - export MONGO_ADD_GLIBCXX_OVERRIDE=""        # [unix]
     - set MONGO_NO_COPY_LIBARROW=1                # [win]
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
