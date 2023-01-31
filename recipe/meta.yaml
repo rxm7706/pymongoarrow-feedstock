@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  skip: true # [arrow_cpp == "7.0.1"]
+  skip: true  # [arrow_cpp == "7.0.1"]
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
