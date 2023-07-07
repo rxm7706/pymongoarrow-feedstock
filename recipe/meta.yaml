@@ -32,7 +32,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - arrow-cpp                              # [build_platform != target_platform]
+    - libarrow                               # [build_platform != target_platform]
     - pyarrow                                # [build_platform != target_platform]
     - libbson                                # [build_platform != target_platform]
     - pkg-config                             # [build_platform != target_platform]
@@ -42,7 +42,7 @@ requirements:
 
   host:
     - python
-    - arrow-cpp
+    - libarrow
     - {{ pin_compatible('pyarrow', max_pin='x') }}
     - cython >=0.29
     - libbson >=1,<2
