@@ -64,7 +64,7 @@ test:
     - pip
     - pandas
     - numpy
-    - pyarrow
+    - {{ pin_compatible('pyarrow', max_pin='x') }}
     - pytest
     - mongodb >=6.0.2  # [not win]
 
