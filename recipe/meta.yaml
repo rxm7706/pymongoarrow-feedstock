@@ -48,7 +48,6 @@ requirements:
     - libbson >=1,<2
     - pip
     - pkg-config
-    - openssl >=3.1.1
     - python
 
   run:
@@ -68,7 +67,6 @@ test:
     - pyarrow
     - pytest
     - mongodb >=6.0.2    # [not win]
-    - openssl >=1.1.1q,<1.1.2a   # [not win]
 
   commands:
     - bash run_the_tests.sh  # [unix and not (ppc64le or python_impl=='pypy')]
