@@ -1,13 +1,9 @@
-{% set name = "pymongoarrow" %}
-{% set version = "1.0.1" %}
-
-
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: pymongoarrow
+  version: 1.0.1
 
 source:
-  url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-1.0.1.tar.gz
   sha256: 27174da65808cc26cb1329caa384ff8927a6e25b4a2b43c7c778b951a697a735
 
 build:
@@ -25,7 +21,7 @@ build:
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
     - set "LIBBSON_INSTALL_DIR=%LIBRARY_PREFIX%"  # [win]
-    - {{ PYTHON }} -m pip install . --no-deps -vvv
+    - python -m pip install . --no-deps -vvv
 
 requirements:
   build:
@@ -66,7 +62,10 @@ test:
     - numpy
     - {{ pin_compatible('pyarrow', max_pin='x') }}
     - pytest
-    - mongodb >=6.0.2  # [not win]
+    - icu
+    - yaml-cpp
+    - boost-cpp
+    - curl
 
   commands:
     - bash run_the_tests.sh  # [unix and not (ppc64le or python_impl=='pypy')]
