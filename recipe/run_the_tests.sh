@@ -10,7 +10,7 @@ case "$DISTRO" in
         URL=https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.7.tgz
 esac
 
-curl -O $URL --output mongodb-binaries.tgz
+curl --retry 3 -sS --max-time 300 --retry-all-errors $URL --output mongodb-binaries.tgz
 tar xfz mongodb-binaries.tgz
 rm -f mongodb-binaries.tgz
 mv mongodb* mongodb
