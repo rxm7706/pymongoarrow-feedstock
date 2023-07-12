@@ -8,6 +8,7 @@ case "$DISTRO" in
     ;;
     Linux)
         URL=https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.7.tgz
+        sudo apt-get install libssl-dev
 esac
 
 curl --retry 3 -sS --max-time 300 --retry-all-errors $URL --output mongodb-binaries.tgz
