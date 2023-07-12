@@ -1,16 +1,6 @@
 #!/bin/bash
 set -ex
-
-DISTRO="$(uname -s)"
-case "$DISTRO" in
-    Darwin)
-        URL=https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-6.0.7.tgz
-    ;;
-    Linux)
-        URL=https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.7.tgz
-        sudo apt-get install -y libssl-dev
-esac
-
+URL=https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-6.0.7.tgz
 curl --retry 3 -sS --max-time 300 --retry-all-errors $URL --output mongodb-binaries.tgz
 tar xfz mongodb-binaries.tgz
 rm -f mongodb-binaries.tgz

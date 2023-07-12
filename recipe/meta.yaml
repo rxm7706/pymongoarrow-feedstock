@@ -66,13 +66,14 @@ test:
     - numpy
     - {{ pin_compatible('pyarrow', max_pin='x') }}
     - pytest
+    # TODO: replace with mongodb install once https://github.com/conda-forge/mongodb-feedstock/pull/72 is resolved
     - icu
     - yaml-cpp
     - boost-cpp
     - curl
 
   commands:
-    - bash run_the_tests.sh  # [unix and not (ppc64le or python_impl=='pypy')]
+    - bash run_the_tests.sh  # [osx]
 
 about:
   home: https://pypi.org/project/pymongoarrow/
