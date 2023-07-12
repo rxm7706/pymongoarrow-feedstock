@@ -70,6 +70,7 @@ test:
     - yaml-cpp
     - boost-cpp
     - curl
+    - openssl
 
   commands:
     - bash run_the_tests.sh  # [unix and not (ppc64le or python_impl=='pypy')]
