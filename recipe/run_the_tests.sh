@@ -27,7 +27,7 @@ mkdir "$DB_PATH"
 
 # Remove the local copy of the source files
 rm -rf pymongoarrow
-python -m unittest discover test -v
+$PYTHON -m pytest
 
 # Terminate the forked process after the test suite exits
 kill `cat $PID_FILE_PATH`
