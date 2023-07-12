@@ -11,10 +11,21 @@ source:
   sha256: 27174da65808cc26cb1329caa384ff8927a6e25b4a2b43c7c778b951a697a735
 
 build:
+  number: 0
+  skip: true  # [libarrow == "9.0.0"]
+  script:
+    - set eux  # [unix]
+    - export MONGO_NO_COPY_LIBARROW=1             # [unix]
+    - export MONGO_LIBARROW_DIR="${PREFIX}/lib"   # [unix]
+    - export MONGO_NO_COPY_LIBBSON=1              # [unix]
+    - export LIBBSON_INSTALL_DIR="${PREFIX}"      # [unix]
+    - export MONGO_CREATE_LIBARROW_SYMLINKS=""    # [unix]
+    - export MONGO_ADD_GLIBCXX_OVERRIDE=""        # [unix]
+    - set MONGO_NO_COPY_LIBARROW=1                # [win]
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
     - set "LIBBSON_INSTALL_DIR=%LIBRARY_PREFIX%"  # [win]
-    - {{ PYTHON }} -m pip install . --no-deps -vvv
+    - python -m pip install . --no-deps -vvv
 
 requirements:
   build:
