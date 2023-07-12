@@ -3,10 +3,10 @@ set -ex
 
 DISTRO="$(uname -s)"
 case "$DISTRO" in
-    darwin)
+    Darwin)
         URL=https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-6.0.7.tgz
     ;;
-    linux)
+    Linux)
         URL=https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.7.tgz
 esac
 
