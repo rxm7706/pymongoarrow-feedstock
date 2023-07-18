@@ -1,5 +1,5 @@
 {% set name = "pymongoarrow" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-{{ version }}.tar.gz
-  sha256: 27174da65808cc26cb1329caa384ff8927a6e25b4a2b43c7c778b951a697a735
+  sha256: 06d8341283729414f977191bac4cf030db750d643fe4d39f6adc31b2515dc4f6
 
 build:
   number: 0
@@ -25,7 +25,7 @@ build:
     - set "MONGO_LIBARROW_DIR=%LIBRARY_LIB%"      # [win]
     - set MONGO_NO_COPY_LIBBSON=1                 # [win]
     - set "LIBBSON_INSTALL_DIR=%LIBRARY_PREFIX%"  # [win]
-    - {{PYTHON}} -m pip install . --no-deps -vvv
+    - {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
   build:
