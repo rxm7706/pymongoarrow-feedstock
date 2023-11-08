@@ -42,7 +42,8 @@ requirements:
 
   host:
     - python
-    - libarrow
+    - libarrow <13   # [py<312]
+    - libarrow       # [py==312]
     - {{ pin_compatible('pyarrow', max_pin='x') }}
     - cython >=0.29
     - libbson >=1,<2
