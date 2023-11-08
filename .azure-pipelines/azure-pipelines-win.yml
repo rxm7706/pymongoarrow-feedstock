@@ -20,9 +20,6 @@ jobs:
       win_64_libarrow10.0.1numpy1.23python3.11.____cpython:
         CONFIG: win_64_libarrow10.0.1numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow10.0.1numpy1.26python3.12.____cpython:
-        CONFIG: win_64_libarrow10.0.1numpy1.26python3.12.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_libarrow11.0.0numpy1.22python3.10.____cpython:
         CONFIG: win_64_libarrow11.0.0numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -35,9 +32,6 @@ jobs:
       win_64_libarrow11.0.0numpy1.23python3.11.____cpython:
         CONFIG: win_64_libarrow11.0.0numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow11.0.0numpy1.26python3.12.____cpython:
-        CONFIG: win_64_libarrow11.0.0numpy1.26python3.12.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_libarrow12numpy1.22python3.10.____cpython:
         CONFIG: win_64_libarrow12numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -49,9 +43,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       win_64_libarrow12numpy1.23python3.11.____cpython:
         CONFIG: win_64_libarrow12numpy1.23python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_libarrow12numpy1.26python3.12.____cpython:
-        CONFIG: win_64_libarrow12numpy1.26python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_libarrow13numpy1.22python3.10.____cpython:
         CONFIG: win_64_libarrow13numpy1.22python3.10.____cpython
