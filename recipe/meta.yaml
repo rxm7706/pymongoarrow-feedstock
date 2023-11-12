@@ -1,6 +1,10 @@
 {% set name = "pymongoarrow" %}
 {% set version = "1.1.0" %}
 
+# appease linter
+{% if libarrow is undefined %}
+{% set libarrow = "13" %}
+{% endif %}
 
 package:
   name: {{ name|lower }}
