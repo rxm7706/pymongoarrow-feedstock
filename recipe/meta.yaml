@@ -12,7 +12,10 @@ source:
 
 build:
   number: 1
-  skip: true  # [libarrow == "9.0.0"]
+  {% if libarrow.split(".")[0] | int < 13 %}
+  # python 3.12 only supported for pyarrow >=13
+  skip: true  # [py>=312]
+  {% endif %}
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
@@ -42,8 +45,7 @@ requirements:
 
   host:
     - python
-    - libarrow <13   # [py<312]
-    - libarrow       # [py==312]
+    - libarrow
     - {{ pin_compatible('pyarrow', max_pin='x') }}
     - cython >=0.29
     - libbson >=1,<2
