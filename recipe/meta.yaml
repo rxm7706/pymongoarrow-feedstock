@@ -1,6 +1,10 @@
 {% set name = "pymongoarrow" %}
 {% set version = "1.1.0" %}
 
+# appease linter
+{% if libarrow is undefined %}
+{% set libarrow = "13" %}
+{% endif %}
 
 package:
   name: {{ name|lower }}
@@ -11,8 +15,11 @@ source:
   sha256: 9dd8f69573fef9e8d71d589a74361bbe7c8ac4f0d5f552589eaf52071ae19640
 
 build:
-  number: 0
-  skip: true  # [libarrow == "9.0.0"]
+  number: 1
+  {% if libarrow.split(".")[0] | int < 13 %}
+  # python 3.12 only supported for pyarrow >=13
+  skip: true  # [py>=312]
+  {% endif %}
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
