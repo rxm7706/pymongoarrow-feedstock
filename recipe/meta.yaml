@@ -15,7 +15,7 @@ source:
   sha256: 86c8fb4dbdeb7d01ecc426ea809dcddfda980fb417d52a0b15323f3ecdc4fd08
 
 build:
-  number: 0
+  number: 1
   {% if libarrow.split(".")[0] | int < 13 %}
   # python 3.12 only supported for pyarrow >=13
   skip: true  # [py>=312]
