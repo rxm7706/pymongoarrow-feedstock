@@ -53,20 +53,20 @@ jobs:
       win_64_libarrow15numpy1.26python3.12.____cpython:
         CONFIG: win_64_libarrow15numpy1.26python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow16numpy1.22python3.10.____cpython:
-        CONFIG: win_64_libarrow16numpy1.22python3.10.____cpython
+      win_64_libarrow16.1numpy1.22python3.10.____cpython:
+        CONFIG: win_64_libarrow16.1numpy1.22python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow16numpy1.22python3.8.____cpython:
-        CONFIG: win_64_libarrow16numpy1.22python3.8.____cpython
+      win_64_libarrow16.1numpy1.22python3.8.____cpython:
+        CONFIG: win_64_libarrow16.1numpy1.22python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow16numpy1.22python3.9.____cpython:
-        CONFIG: win_64_libarrow16numpy1.22python3.9.____cpython
+      win_64_libarrow16.1numpy1.22python3.9.____cpython:
+        CONFIG: win_64_libarrow16.1numpy1.22python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow16numpy1.23python3.11.____cpython:
-        CONFIG: win_64_libarrow16numpy1.23python3.11.____cpython
+      win_64_libarrow16.1numpy1.23python3.11.____cpython:
+        CONFIG: win_64_libarrow16.1numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_libarrow16numpy1.26python3.12.____cpython:
-        CONFIG: win_64_libarrow16numpy1.26python3.12.____cpython
+      win_64_libarrow16.1numpy1.26python3.12.____cpython:
+        CONFIG: win_64_libarrow16.1numpy1.26python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
     maxParallel: 17
   timeoutInMinutes: 360
