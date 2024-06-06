@@ -1,5 +1,5 @@
 {% set name = "pymongoarrow" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 # appease linter
 {% if libarrow is undefined %}
@@ -12,10 +12,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pymongoarrow/pymongoarrow-{{ version }}.tar.gz
-  sha256: e409b7a2f388f6c3a8b82e164bcfa82d1a330ab0f891fa0945d1ba4c6f29f6f1
+  sha256: 7b456dc4c28a1cc7509f49b682e122c37bb06d99c32cf024c78a6df22312d31c
 
 build:
-  number: 2
+  number: 0
   {% if libarrow.split(".")[0] | int < 13 %}
   # python 3.12 only supported for pyarrow >=13
   skip: true  # [py>=312]
