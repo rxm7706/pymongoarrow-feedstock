@@ -1,11 +1,6 @@
 {% set name = "pymongoarrow" %}
 {% set version = "1.4.0" %}
 
-# appease linter
-{% if libarrow is undefined %}
-{% set libarrow = "13" %}
-{% endif %}
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -16,10 +11,6 @@ source:
 
 build:
   number: 1
-  {% if libarrow.split(".")[0] | int < 13 %}
-  # python 3.12 only supported for pyarrow >=13
-  skip: true  # [py>=312]
-  {% endif %}
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
