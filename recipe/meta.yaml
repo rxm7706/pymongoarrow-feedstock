@@ -1,11 +1,6 @@
 {% set name = "pymongoarrow" %}
 {% set version = "1.4.0" %}
 
-# appease linter
-{% if libarrow is undefined %}
-{% set libarrow = "13" %}
-{% endif %}
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -15,11 +10,7 @@ source:
   sha256: 7b456dc4c28a1cc7509f49b682e122c37bb06d99c32cf024c78a6df22312d31c
 
 build:
-  number: 0
-  {% if libarrow.split(".")[0] | int < 13 %}
-  # python 3.12 only supported for pyarrow >=13
-  skip: true  # [py>=312]
-  {% endif %}
+  number: 1
   script:
     - set eux  # [unix]
     - export MONGO_NO_COPY_LIBARROW=1             # [unix]
@@ -51,16 +42,15 @@ requirements:
   host:
     - python
     - libarrow
-    - {{ pin_compatible('pyarrow', max_pin='x') }}
+    - pyarrow
     - cython >=0.29
     - libbson >=1,<2
     - pip
     - pkg-config
-    - python
 
   run:
     - pymongo >=3.11,<5
-    - {{ pin_compatible('pyarrow', max_pin='x') }}
+    - pyarrow
     - python
 
 test:
@@ -72,7 +62,6 @@ test:
     - pip
     - pandas
     - numpy
-    - {{ pin_compatible('pyarrow', max_pin='x') }}
     - pytest
     # TODO: replace with mongodb install once https://github.com/conda-forge/mongodb-feedstock/pull/72 is resolved
     - icu
